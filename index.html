@@ -5,11 +5,11 @@
 	<title>MAPA</title>
 	
 <!-- scripts e folhas de estilo -->
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ==" crossorigin="" />
-	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js" integrity="sha512-WXoSHqw/t26DszhdMhOXOkI7qCiv5QWXhH9R7CgvgZMHz1ImlkVQ3uNsiQKu5wwbbxtPzFXd1hK4tzno2VqhpA==" crossorigin=""></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
 	<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css" />
 	<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css" />
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js"></script>
 	<script src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
 	<script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
 </head>
@@ -17,7 +17,6 @@
 <body>
 <!-- container do mapa -->
 	<div id="map" style="width: 100%; height: 100vh; border: 0px;"></div>
-
 	<script type="text/javascript">
 <!-- jquery lê o arquivo geojson -->		
 		$.getJSON("https://raw.githubusercontent.com/jorgepsendziuk/geojson/master/gasub.geojson", function(data) {
@@ -43,13 +42,9 @@
 			  }
 			});
 			markers.addLayer(geoJsonLayer); //adiciona marcadores na camada
-			
 			var map = L.map('map').addLayer(tiles); //cria mapa e adiciona mapa base
 			map.addLayer(markers); //adiciona camada de marcadores no mapa
 			map.fitBounds(markers.getBounds()); //centraliza visão do mapa na extensão dos marcadores
-
-
-
 		});
 
 	</script>

@@ -35,7 +35,7 @@
 <!-- container do mapa -->
 			var geoJsonLayer = L.geoJson(data, { //adiciona arquivo como camada do Leaflet
 			  onEachFeature: function (feature, layer) { 
-				layer.bindPopup('name: '+feature.properties.f2+'</br>'+
+				layer.bindPopup('CATEGORIA: '+feature.properties.CATEGORIA+'</br>'+
 								'name: '+feature.properties.f2+'</br>'+
 								'name: '+feature.properties.f2+'</br>'
 								); //para cada feição cria um popup com as informações
